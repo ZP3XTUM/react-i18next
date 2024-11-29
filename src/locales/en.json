@@ -1,0 +1,44 @@
+{
+  "static": {
+    "title": "Welcome",
+    "description": "This is a static text demo for language switching."
+  },
+  "dynamic": {
+    "greeting": "Hello, {{name}}! 🫡",
+    "placeholder": "Enter your name"
+  },
+  "passing_default": {
+    "200": "Success",
+    "404": "The page was not found.",
+    "unspecific": "Something went wrong."
+  },
+  "contexts": {
+    "friend": "A friend",
+    "friend_male": "A boyfriend",
+    "friend_female": "A girlfriend"
+  },
+  "nesting": {
+    "nesting1": "I $t(nesting.nesting2)",
+    "nesting2": "love $t(nesting.nesting3)",
+    "nesting3": "you $t(nesting.nesting4)",
+    "nesting4": "❤️"
+  },
+  "object": {
+    "tree": {
+      "res": "added {{something}}"
+    },
+    "type_is": "Type is"
+  },
+  "array": {
+    "array_join": ["item1", "item2", "item3"],
+    "array_join_with_interpolation": ["you", "are", "{{myVar}}"],
+    "array_of_objects": [
+      {
+        "name": "Tum"
+      },
+      {
+        "name": "P'Bird"
+      }
+    ]
+  }
+}
