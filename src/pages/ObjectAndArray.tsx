@@ -8,7 +8,7 @@ const ObjectAndArray: React.FC = () => {
   const { t } = useTranslation();
 
   const [name, setName] = useState("ตั้มสุดโคตรหล่อ");
-  const [name2, setName2] = useState("ตั้มสุดโคตรน่ารัก");
+  const [name2, setName2] = useState("ตั้มสุดน่ารัก");
 
   return (
     <div className="p-8">

@@ -30,8 +30,16 @@
     "type_is": "ไทป์ คือ"
   },
   "array": {
-    "array_join": ["ไอเทม1", "ไอเทม2", "ไอเทม3"],
-    "array_join_with_interpolation": ["คุณ", "คือ", "{{name}}"],
+    "array_join": [
+      "ไอเทม1",
+      "ไอเทม2",
+      "ไอเทม3"
+    ],
+    "array_join_with_interpolation": [
+      "คุณ",
+      "คือ",
+      "{{name}}"
+    ],
     "array_of_objects": [
       {
         "name": "ตั้ม"
