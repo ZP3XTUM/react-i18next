@@ -38,6 +38,22 @@ const PassingDefault: React.FC = () => {
 
       <CodeBlock>
         <p>{`t(["passing_default.${selected}", "passing_default.unspecific"])`}</p>
+
+        <br />
+        <p className="text-yellow-200">ตัวอย่าง JSON</p>
+        <pre>
+          {JSON.stringify(
+            {
+              passing_default: {
+                "200": t("passing_default.200"),
+                "404": t("passing_default.404"),
+                unspecific: t("passing_default.unspecific"),
+              },
+            },
+            null,
+            2
+          )}
+        </pre>
       </CodeBlock>
 
       <ButtonLang />

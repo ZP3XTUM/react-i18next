@@ -3,9 +3,10 @@ import { useTranslation } from "react-i18next";
 
 import ButtonLang from "../components/ButtonLang";
 import CodeBlock from "../components/CodeBlock";
+import { Language } from "../locales";
 
 const Nesting: React.FC = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <div className="p-8">
@@ -17,36 +18,37 @@ const Nesting: React.FC = () => {
         <p>{`t("nesting.nesting1")`}</p>
         <br />
         <p className="text-yellow-200">ตัวอย่าง JSON</p>
-        <p>{`<TH>`}</p>
-        <pre>
-          {JSON.stringify(
-            {
-              nesting: {
-                nesting1: "ผม $t(nesting.nesting2)",
-                nesting2: "รัก $t(nesting.nesting3)",
-                nesting3: "คุณ $t(nesting.nesting4)",
-                nesting4: "❤️",
+        {i18n.language === Language.TH ? (
+          <pre>
+            {JSON.stringify(
+              {
+                nesting: {
+                  nesting1: "ผม $t(nesting.nesting2)",
+                  nesting2: "รัก $t(nesting.nesting3)",
+                  nesting3: "คุณ $t(nesting.nesting4)",
+                  nesting4: "❤️",
+                },
               },
-            },
-            null,
-            2
-          )}
-        </pre>
-        <p>{`<EN>`}</p>
-        <pre>
-          {JSON.stringify(
-            {
-              nesting: {
-                nesting1: "I $t(nesting.nesting2)",
-                nesting2: "love $t(nesting.nesting3)",
-                nesting3: "you $t(nesting.nesting4)",
-                nesting4: "❤️",
+              null,
+              2
+            )}
+          </pre>
+        ) : (
+          <pre>
+            {JSON.stringify(
+              {
+                nesting: {
+                  nesting1: "I $t(nesting.nesting2)",
+                  nesting2: "love $t(nesting.nesting3)",
+                  nesting3: "you $t(nesting.nesting4)",
+                  nesting4: "❤️",
+                },
               },
-            },
-            null,
-            2
-          )}
-        </pre>
+              null,
+              2
+            )}
+          </pre>
+        )}
       </CodeBlock>
 
       <ButtonLang />

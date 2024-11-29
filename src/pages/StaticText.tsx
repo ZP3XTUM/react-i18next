@@ -17,6 +17,21 @@ const StaticText: React.FC = () => {
       <CodeBlock>
         <p>{`t("static.title")`}</p>
         <p>{`t("static.description")`}</p>
+
+        <br />
+        <p className="text-yellow-200">ตัวอย่าง JSON</p>
+        <pre>
+          {JSON.stringify(
+            {
+              static: {
+                title: t("static.title"),
+                description: t("static.description"),
+              },
+            },
+            null,
+            2
+          )}
+        </pre>
       </CodeBlock>
 
       <ButtonLang />

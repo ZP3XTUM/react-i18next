@@ -5,7 +5,7 @@
   },
   "dynamic": {
     "greeting": "Hello, {{name}}! 🫡",
-    "placeholder": "Enter your name"
+    "placeholder": "Enter name"
   },
   "passing_default": {
     "200": "Success",
@@ -31,7 +31,7 @@
   },
   "array": {
     "array_join": ["item1", "item2", "item3"],
-    "array_join_with_interpolation": ["you", "are", "{{myVar}}"],
+    "array_join_with_interpolation": ["you", "are", "{{name}}"],
     "array_of_objects": [
       {
         "name": "Tum"

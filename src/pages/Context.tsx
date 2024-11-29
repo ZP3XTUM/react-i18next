@@ -19,6 +19,22 @@ const Context: React.FC = () => {
         <p>{`t("contexts.friend")`}</p>
         <p>{`t("contexts.friend", { context: "male" })`}</p>
         <p>{`t("contexts.friend", { context: "female" })`}</p>
+
+        <br />
+        <p className="text-yellow-200">ตัวอย่าง JSON</p>
+        <pre>
+          {JSON.stringify(
+            {
+              contexts: {
+                friend: t("contexts.friend"),
+                friend_male: t("contexts.friend_male"),
+                friend_female: t("contexts.friend_female"),
+              },
+            },
+            null,
+            2
+          )}
+        </pre>
       </CodeBlock>
 
       <ButtonLang />

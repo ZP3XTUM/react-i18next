@@ -44,12 +44,9 @@ const ObjectAndArray: React.FC = () => {
         <pre>
           {JSON.stringify(
             {
-              object: {
-                tree: {
-                  res: "เพิ่ม {{something}}",
-                },
-                type_is: "ไทป์ คือ",
-              },
+              object: t("object.tree", {
+                returnObjects: true,
+              }),
             },
             null,
             2
@@ -69,7 +66,7 @@ const ObjectAndArray: React.FC = () => {
       <p className="text-lg">{t("array.array_join", { joinArrays: "+" })}</p>
       <p className="text-lg">
         {t("array.array_join_with_interpolation", {
-          myVar: name,
+          name: name2,
           joinArrays: " ",
         })}
       </p>
@@ -77,7 +74,7 @@ const ObjectAndArray: React.FC = () => {
 
       <CodeBlock>
         <p>{`t("array.array_join", { joinArrays: "+" })`}</p>
-        <p>{`t("array.array_join_with_interpolation", { myVar: name, joinArrays: " " })`}</p>
+        <p>{`t("array.array_join_with_interpolation", { name: ${name2}, joinArrays: " " })`}</p>
         <p>{`t("array.array_of_objects.1.name")`}</p>
         <br />
         <p className="text-yellow-200">ตัวอย่าง JSON</p>
@@ -85,9 +82,18 @@ const ObjectAndArray: React.FC = () => {
           {JSON.stringify(
             {
               array: {
-                array_join: ["ไอเทม1", "ไอเทม2", "ไอเทม3"],
-                array_join_with_interpolation: ["คุณ", "สามารถ", name],
-                array_of_objects: [{ name: "ตั้ม" }, { name: "พี่เบิร์ด" }],
+                array_join:
+                  "[" + t("array.array_join", { joinArrays: "],[" }) + "]",
+                array_join_with_interpolation:
+                  "[" +
+                  t("array.array_join_with_interpolation", {
+                    joinArrays: "],[",
+                  }) +
+                  "]",
+                array_of_objects: [
+                  { name: t("array.array_of_objects.0.name") },
+                  { name: t("array.array_of_objects.1.name") },
+                ],
               },
             },
             null,
@@ -96,7 +102,9 @@ const ObjectAndArray: React.FC = () => {
         </pre>
       </CodeBlock>
 
-      <ButtonLang />
+      <div className="fixed top-5 right-5">
+        <ButtonLang />
+      </div>
     </div>
   );
 };

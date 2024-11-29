@@ -1,8 +1,10 @@
 import React from "react";
-import i18n from "i18next";
 import { Language } from "../locales";
+import { useTranslation } from "react-i18next";
 
 const ButtonLang: React.FC = () => {
+  const { i18n } = useTranslation();
+
   const changeLanguage = (lng: string) => {
     i18n.changeLanguage(lng);
   };

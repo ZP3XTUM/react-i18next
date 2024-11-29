@@ -23,6 +23,21 @@ const DynamicText: React.FC = () => {
 
       <CodeBlock>
         <p>{`t("dynamic.greeting", { name: "${name}" })`}</p>
+
+        <br />
+        <p className="text-yellow-200">ตัวอย่าง JSON</p>
+        <pre>
+          {JSON.stringify(
+            {
+              dynamic: {
+                greeting: t("dynamic.greeting"),
+                placeholder: t("dynamic.placeholder"),
+              },
+            },
+            null,
+            2
+          )}
+        </pre>
       </CodeBlock>
 
       <ButtonLang />

@@ -1,20 +1,20 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import en from "./en.json";
 import th from "./th.json";
+import en from "./en.json";
 
 export enum Language {
-  TH = 'th',
-  EN = 'en',
+  TH = "th",
+  EN = "en",
 }
 
 i18n.use(initReactI18next).init({
   resources: {
-    [Language.EN]: {
-      translation: en,
-    },
     [Language.TH]: {
       translation: th,
+    },
+    [Language.EN]: {
+      translation: en,
     },
   },
   lng: Language.TH, // ภาษาเริ่มต้น
